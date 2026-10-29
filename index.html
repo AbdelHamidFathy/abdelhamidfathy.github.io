@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AbdelHamid Fathy | Software Engineer</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: '#0f172a',
+                        darker: '#020617',
+                        primary: '#f59e0b', // Amber/Gold accent
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #475569;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f59e0b;
+        }
+        
+        /* Typing effect cursor */
+        .typing-cursor::after {
+            content: '|';
+            animation: blink 1s step-start infinite;
+        }
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+    </style>
+</head>
+<body class="bg-darker text-gray-300 font-sans antialiased overflow-x-hidden">
+
+    <!-- 1. Header & Navigation -->
+    <header id="header" class="fixed w-full top-0 z-50 transition-all duration-300 bg-darker/90 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#home" class="flex items-center">
+                        <img src="images/logo.png" alt="AbdelHamid Fathy Logo" class="h-16 w-auto object-contain">
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-300 hover:text-primary transition-colors duration-300 font-medium">Home</a>
+                    <a href="#about" class="text-gray-300 hover:text-primary transition-colors duration-300 font-medium">About</a>
+                    <a href="#skills" class="text-gray-300 hover:text-primary transition-colors duration-300 font-medium">Skills</a>
+                    <a href="#portfolio" class="text-gray-300 hover:text-primary transition-colors duration-300 font-medium">Portfolio</a>
+                    <a href="#contact" class="text-gray-300 hover:text-primary transition-colors duration-300 font-medium">Contact</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-dark border-b border-gray-800">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-primary hover:bg-gray-800 transition-colors">Home</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-primary hover:bg-gray-800 transition-colors">About</a>
+                <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-primary hover:bg-gray-800 transition-colors">Skills</a>
+                <a href="#portfolio" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-primary hover:bg-gray-800 transition-colors">Portfolio</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-primary hover:bg-gray-800 transition-colors">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative pt-20">
+        <!-- Background decorative elements -->
+        <div class="absolute top-1/4 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl -z-10"></div>
+        <div class="absolute bottom-1/4 right-10 w-96 h-96 bg-blue-900/20 rounded-full blur-3xl -z-10"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-primary font-medium tracking-wide text-lg sm:text-xl mb-4">Hello, World! I am</h2>
+            <h1 class="text-5xl sm:text-7xl font-bold text-white mb-6 tracking-tight">
+                AbdelHamid Fathy
+            </h1>
+            <p class="text-xl sm:text-2xl text-gray-400 mb-10 h-8 typing-cursor" id="typewriter">
+                <!-- Text injected via JS -->
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="#portfolio" class="px-8 py-3 rounded-full bg-primary text-darker font-semibold hover:bg-yellow-500 transition-all duration-300 transform hover:-translate-y-1 shadow-lg shadow-primary/30 w-full sm:w-auto text-center">
+                    View My Work
+                </a>
+                <a href="#contact" class="px-8 py-3 rounded-full border border-gray-600 text-white font-semibold hover:border-primary hover:text-primary transition-all duration-300 w-full sm:w-auto text-center">
+                    Contact Me
+                </a>
+            </div>
+        </div>
+        
+        <!-- Scroll Down Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#about" class="text-gray-400 hover:text-primary transition-colors">
+                <i class="fas fa-chevron-down text-2xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- 3. About Me Section -->
+    <section id="about" class="py-24 bg-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-2">About <span class="text-primary">Me</span></h2>
+                <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="w-full md:w-5/12">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-800 group">
+                        <img src="images/profile.jpg" alt="Profile" class="w-full h-auto transform group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </div>
+                </div>
+                <div class="w-full md:w-7/12">
+                    <h3 class="text-2xl font-semibold text-white mb-4">I'm a Passionate Senior Mobile Developer & Designer</h3>
+                    <p class="text-gray-400 leading-relaxed mb-6">
+                        Forward-thinking Software Engineer with over 5 years of experience designing and deploying innovative mobile applications, with deep domain expertise in Housing Technology (PropTech). Currently collaborating with a UK-based team 
+<a href="https://commons.wikimedia.org/wiki/File:Flag_of_the_United_Kingdom_(3-5).svg" class="inline-block" title="Flag of the United Kingdom">
+            <img class="inline-block align-baseline mx-1 rounded-sm" width="26" height="17" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg/960px-Flag_of_the_United_Kingdom_%283-5%29.svg.png" loading="lazy" alt="UK Flag">
+        </a>
+ to build scalable digital solutions. Adept in navigating the entire Software Development Life Cycle (SDLC)—from initial concept through to final delivery. A proactive learner and strategic problem-solver, proven in leading cross-functional teams to deliver high-quality projects on time within fast-paced, deadline-driven environments.                    </p>
+                    <p class="text-gray-400 leading-relaxed mb-8">
+                        When I'm not coding, you can find me exploring new technologies, contributing to open-source, or enjoying a good cup of coffee. Let's build something amazing together!
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-6 mb-8 border-t border-gray-800 pt-8">
+                        <div>
+                            <p class="text-gray-500 text-sm">Name:</p>
+                            <p class="text-white font-medium">Abdelhamid Fathy</p>
+                        </div>
+                        <div>
+                            <p class="text-gray-500 text-sm">Availability:</p>
+                            <p class="text-primary font-medium">Freelance</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Skills Section -->
+    <section id="skills" class="py-24 bg-darker">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-2">My <span class="text-primary">Skills</span></h2>
+                <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+                <p class="text-gray-400 mt-4 max-w-2xl mx-auto">Here are some of the technologies and tools I work with on a daily basis to bring projects to life.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Technical Skills (Progress Bars) -->
+                <div>
+                    <h3 class="text-xl font-semibold text-white mb-6 border-b border-gray-800 pb-2"><i class="fas fa-code text-primary mr-2"></i> Coding</h3>
+                    <div class="space-y-6">
+                                      <!-- Skill 1 -->
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-300 font-medium">Flutter Framework</span>
+                                <span class="text-primary text-sm">95%</span>
+                            </div>
+                            <div class="w-full bg-gray-800 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <!-- Skill 2 -->
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-300 font-medium">State Management</span>
+                                <span class="text-primary text-sm">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-800 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <!-- Skill 3 -->
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-300 font-medium">Software Architecture</span>
+                                <span class="text-primary text-sm">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-800 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                                      <!-- Skill 4 -->
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-300 font-medium">API & Integration</span>
+                                <span class="text-primary text-sm">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-800 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <!-- Skill 5 -->
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-300 font-medium">Native Mobile Basics</span>
+                                <span class="text-primary text-sm">70%</span>
+                            </div>
+                            <div class="w-full bg-gray-800 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools & Frameworks (Tags) -->
+                <div>
+                    <h3 class="text-xl font-semibold text-white mb-6 border-b border-gray-800 pb-2"><i class="fas fa-tools text-primary mr-2"></i> Tools & Tech</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-gray-300 hover:border-primary hover:text-white transition-colors cursor-default">Git & GitHub</span>
+                        <span class="px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-gray-300 hover:border-primary hover:text-white transition-colors cursor-default">Firebase & Cloud Services</span>
+                                      <span class="px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-gray-300 hover:border-primary hover:text-white transition-colors cursor-default">AI</span>
+                        <span class="px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-gray-300 hover:border-primary hover:text-white transition-colors cursor-default">Figma / UI Design</span>
+                        <span class="px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-gray-300 hover:border-primary hover:text-white transition-colors cursor-default">Azure DevOps</span>
+                        <span class="px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-gray-300 hover:border-primary hover:text-white transition-colors cursor-default">Microsoft Dynamics 365</span>
+                       <span class="px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-gray-300 hover:border-primary hover:text-white transition-colors cursor-default">Passkey Integration</span>
+                       <span class="px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-gray-300 hover:border-primary hover:text-white transition-colors cursor-default">Stripe</span>
+                        <span class="px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-gray-300 hover:border-primary hover:text-white transition-colors cursor-default">RESTful APIs</span>
+                        <span class="px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-gray-300 hover:border-primary hover:text-white transition-colors cursor-default">App Deployment</span>
+                                      <span class="px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-gray-300 hover:border-primary hover:text-white transition-colors cursor-default">Postman / Swagger</span>
+                                      <span class="px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-gray-300 hover:border-primary hover:text-white transition-colors cursor-default">Local Databases</span>
+                        <span class="px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-gray-300 hover:border-primary hover:text-white transition-colors cursor-default">CI/CD</span>
+                        <span class="px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-gray-300 hover:border-primary hover:text-white transition-colors cursor-default">Responsive & Adaptive Design</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Portfolio Section -->
+    <section id="portfolio" class="py-24 bg-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-2">Latest <span class="text-primary">Projects</span></h2>
+                <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Project 1 -->
+                <div class="bg-darker rounded-xl overflow-hidden border border-gray-800 hover:border-gray-600 transition-all duration-300 group">
+                    <div class="relative overflow-hidden">
+                        <img src="images/iproperty cloud.jpg" alt="Project 2" class="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
+                            <a href="https://iproperty.cloud/customer-mobile-app/" target="_blank" class="w-10 h-10 rounded-full bg-primary text-darker flex items-center justify-center hover:bg-white hover:text-darker transition-colors" title="Live Preview"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex gap-2 mb-3">
+                            <span class="text-xs font-semibold px-2 py-1 bg-gray-800 text-primary rounded">Flutter</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">iProperty Cloud</h3>
+                        <p class="text-gray-400 text-sm mb-4 line-clamp-3">iProperty Cloud is a fully connected housing management platform with ready-to-use, pre-built, and fully configurable processes, allowing you to go live in a matter of months, not years.</p>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="bg-darker rounded-xl overflow-hidden border border-gray-800 hover:border-gray-600 transition-all duration-300 group">
+                    <div class="relative overflow-hidden">
+                        <img src="images/1Me.jpg" alt="Project 1" class="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
+                            <a href="https://www.1me.app/" target="_blank" class="w-10 h-10 rounded-full bg-primary text-darker flex items-center justify-center hover:bg-white hover:text-darker transition-colors" title="Live Preview"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex gap-2 mb-3">
+                            <span class="text-xs font-semibold px-2 py-1 bg-gray-800 text-primary rounded">Flutter</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">1Me</h3>
+                        <p class="text-gray-400 text-sm mb-4 line-clamp-3">1-QR Code or 1-Tap is all what you need to share your contacts information with anyone.</p>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="bg-darker rounded-xl overflow-hidden border border-gray-800 hover:border-gray-600 transition-all duration-300 group">
+                    <div class="relative overflow-hidden">
+                        <img src="images/Palm Hills.jpg" alt="Project 3" class="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
+                            <a href="https://www.palmhillsdevelopments.com/en-us/home" target="_blank" class="w-10 h-10 rounded-full bg-primary text-darker flex items-center justify-center hover:bg-white hover:text-darker transition-colors" title="Live Preview"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex gap-2 mb-3">
+                            <span class="text-xs font-semibold px-2 py-1 bg-gray-800 text-primary rounded">Flutter</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">PALM HILLS</h3>
+                        <p class="text-gray-400 text-sm mb-4 line-clamp-3">The ultimate community management app designed to enhance your experience and connectivity within our vibrant community.</p>
+                    </div>
+                </div>
+                <!-- Project 4  -->
+                <div class="bg-darker rounded-xl overflow-hidden border border-gray-800 hover:border-gray-600 transition-all duration-300 group">
+                    <div class="relative overflow-hidden">
+                        <img src="images/property pro.jpg" alt="Project 2" class="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
+                            <a href="https://apps.apple.com/us/app/propertypro-sales/id6747418237" target="_blank" class="w-10 h-10 rounded-full bg-primary text-darker flex items-center justify-center hover:bg-white hover:text-darker transition-colors" title="Live Preview"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex gap-2 mb-3">
+                            <span class="text-xs font-semibold px-2 py-1 bg-gray-800 text-primary rounded">Flutter</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Property Pro</h3>
+                        <p class="text-gray-400 text-sm mb-4 line-clamp-3">Designed for real estate professionals, our app makes it easy to collect client requirements and instantly match them with available units. Whether you're selling apartments, villas, or commercial properties, this tool helps you stay organized, responsive, and ahead of the competition.</p>
+                    </div>
+                </div>
+                
+                <!-- Project 5 -->
+                <div class="bg-darker rounded-xl overflow-hidden border border-gray-800 hover:border-gray-600 transition-all duration-300 group">
+                    <div class="relative overflow-hidden">
+                        <img src="images/waypass.jpg" alt="Project 1" class="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
+                            <a href="https://apps.apple.com/us/app/waypass-visitor-management/id6739334885" target="_blank" class="w-10 h-10 rounded-full bg-primary text-darker flex items-center justify-center hover:bg-white hover:text-darker transition-colors" title="Live Preview"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex gap-2 mb-3">
+                            <span class="text-xs font-semibold px-2 py-1 bg-gray-800 text-primary rounded">Flutter</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">WayPass</h3>
+                        <p class="text-gray-400 text-sm mb-4 line-clamp-3">WayPass - The Ultimate Visitor Management Solution:
+
+Welcome your guests with a modern, seamless experience using WayPass an all-in-one app designed to streamline visitor management.</p>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="bg-darker rounded-xl overflow-hidden border border-gray-800 hover:border-gray-600 transition-all duration-300 group">
+                    <div class="relative overflow-hidden">
+                        <img src="images/eraffle.jpg" alt="Project 3" class="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
+                            <a href="https://apps.apple.com/us/app/eraffle-customer-service-app/id6478594406" target="_blank" class="w-10 h-10 rounded-full bg-primary text-darker flex items-center justify-center hover:bg-white hover:text-darker transition-colors" title="Live Preview"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex gap-2 mb-3">
+                            <span class="text-xs font-semibold px-2 py-1 bg-gray-800 text-primary rounded">Flutter</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">eRaffle</h3>
+                        <p class="text-gray-400 text-sm mb-4 line-clamp-3">The ultimate solution for malls, stores, and brands seeking to enhance customer engagement through captivating raffles.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Contact Section -->
+    <section id="contact" class="py-24 bg-darker relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-2">Get In <span class="text-primary">Touch</span></h2>
+                <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-12 bg-dark rounded-2xl border border-gray-800 p-8 lg:p-12 shadow-2xl">
+                <!-- Contact Info -->
+                <div class="w-full lg:w-5/12">
+                    <h3 class="text-2xl font-bold text-white mb-6">Let's talk about everything!</h3>
+                    <p class="text-gray-400 mb-8">Feel free to get in touch with me. I am always open to discussing new projects, creative ideas or opportunities to be part of your visions.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                        </div>
+                        <div class="flex items-start gap-4">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="w-full lg:w-7/12">
+                    <form id="contactForm" class="space-y-6" action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="d9ca0116-72e8-4da1-ac52-9ebc071a587d">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-400 mb-2">Your Name</label>
+                                <input type="text" name="name" id="name" required class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors placeholder-gray-500" placeholder="John Doe">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-400 mb-2">Your Email</label>
+                                <input type="email" name="email" id="email" required class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors placeholder-gray-500" placeholder="john@example.com">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-400 mb-2">Subject</label>
+                            <input type="text" name="subject" id="subject" required class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors placeholder-gray-500" placeholder="Project Inquiry">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-400 mb-2">Message</label>
+                            <textarea name="message" id="message" rows="5" required class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors placeholder-gray-500 resize-none" placeholder="Hello, I'd like to talk about..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-primary text-darker font-bold py-4 rounded-lg hover:bg-yellow-500 transition-colors flex justify-center items-center gap-2">
+                            Send Message <i class="fas fa-paper-plane"></i>
+                        </button>
+                        <p id="form-msg" class="text-green-500 text-center mt-4 hidden">Message sent successfully!</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark border-t border-gray-800 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0 text-center md:text-left">
+                <a href="#home" class="flex items-center">
+                    <img src="images/logo.png" alt="AbdelHamid Fathy Logo" class="h-16 w-auto object-contain">
+                </a>
+                <p class="text-gray-500 text-sm mt-2">&copy; 2026 Abdelhamid Fathy. All rights reserved.</p>
+            </div>
+            
+            <!-- Social Links -->
+            <div class="flex space-x-4">
+                <a href="https://github.com/AbdelHamidFathy" target="_blank" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-darker transition-colors duration-300">
+                    <i class="fab fa-github text-lg"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/abdelhamid-fathy/" target="_blank" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-darker transition-colors duration-300">
+                    <i class="fab fa-linkedin-in text-lg"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // 1. Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const icon = btn.querySelector('i');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            if(menu.classList.contains('hidden')){
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            }
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+
+        // 2. Navbar Styling on Scroll
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-lg');
+            } else {
+                header.classList.remove('shadow-lg');
+            }
+        });
+
+        // 3. Simple Typewriter Effect
+        const phrases = ["Innovative Software Engineer", "Mobile Development Specialist", "Proficient in Flutter"];
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typeTarget = document.getElementById('typewriter');
+
+        function type() {
+            const currentPhrase = phrases[phraseIndex];
+            
+            if (isDeleting) {
+                typeTarget.innerText = currentPhrase.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typeTarget.innerText = currentPhrase.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let typeSpeed = 100;
+            if (isDeleting) typeSpeed /= 2;
+
+            if (!isDeleting && charIndex === currentPhrase.length) {
+                typeSpeed = 2000; // Pause at end of phrase
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                typeSpeed = 500; // Pause before typing next phrase
+            }
+
+            setTimeout(type, typeSpeed);
+        }
+
+        // Start typing effect on load
+        document.addEventListener("DOMContentLoaded", () => {
+            setTimeout(type, 1000);
+        });
+
+        // 4. Form Submit Demo
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const msg = document.getElementById('form-msg');
+            msg.classList.remove('hidden');
+            document.getElementById('contactForm').reset();
+            
+            setTimeout(() => {
+                msg.classList.add('hidden');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
